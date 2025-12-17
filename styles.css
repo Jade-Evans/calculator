@@ -5,6 +5,7 @@
 
 button{
     border-radius: 8px;
+     box-shadow: 4px 4px 3px rgb(8, 7, 7);
 }
 
 #calculatorBody{
@@ -14,14 +15,19 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     gap: 20px;
+    border-radius: 8px;
+     box-shadow: 4px 4px 4px rgb(8, 7, 7);
+    margin: auto;
 }
 
 #screen{
     background-color: lightgray;
     flex: 0 0 20%;
     width: 100%;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px rgb(8, 7, 7);
 }
 
 #operatorButtons{
