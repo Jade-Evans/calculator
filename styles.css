@@ -1,0 +1,7 @@
+#calculatorBody{
+    background-color: grey;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
