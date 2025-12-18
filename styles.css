@@ -36,6 +36,8 @@ h1{
     box-shadow: 4px 4px 4px rgb(8, 7, 7);
     font-size: 3rem;
     color: black;
+    text-align: right;
+    padding-right: 5px;
 }
 
 #operatorButtons{
