@@ -8,6 +8,12 @@ button{
      box-shadow: 4px 4px 3px rgb(8, 7, 7);
 }
 
+h1{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4rem;
+}
 #calculatorBody{
     background-color: grey;
     width: 500px;
@@ -28,6 +34,8 @@ button{
     width: 100%;
     border-radius: 8px;
     box-shadow: 4px 4px 4px rgb(8, 7, 7);
+    font-size: 3rem;
+    color: black;
 }
 
 #operatorButtons{
