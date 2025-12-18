@@ -1,4 +1,3 @@
-const calculatorBody = document.querySelector("#calculatorBody");
 const screen = document.querySelector("#screen");
 const operatorButtonsContainer = document.querySelector("#operatorButtons");
 const operatorButtons = document.querySelectorAll("#operatorButtons button");
@@ -9,13 +8,19 @@ const numberButtonsArr = Array.from(numberButtons);
 const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
 const backButton = document.querySelector("#back");
-const operators = "+-X%";
+const operators = "+-X/";
+
 
 const calculate = function(){
+    let status = "";
     let screenString = "";
     //NUMBERS/OPERATORS APPEAR ON SCREEN WHEN CLICKED//      
     numberButtonsArr.forEach(button=>{
         button.addEventListener("click",()=>{
+            if(status === "clicked"){
+                screen.value = "";
+                screenString = "";
+            }
             screen.value += button.textContent;
             screenString += button.textContent;
             console.log(`${screenString}: screenString`);
@@ -48,6 +53,7 @@ const calculate = function(){
     //CREATE VARIABLES FOR NUM 1, OPERATOR AND NUM 2:
     //1 split the sum:
     equalsButton.addEventListener("click",()=>{
+        status = "clicked";
         let screenStringArr = screenString.split(" ");
         let n1 = Number(screenStringArr[0]);
         let op = screenStringArr[1];
@@ -57,15 +63,27 @@ const calculate = function(){
         switch(op){
             case "+":
                 answer = n1 + n2;
+                break;
             case "-":
                 answer = n1 - n2;
+                break;
             case "X":
                 answer = n1*n2;
-            case "%":
+                break;
+            case "/":
                 answer = n1/n2;
+                break;
         }
-
+        console.log(answer);
+        screen.value = answer;
+        console.log(`${screen.value}: screen.value`);
+        let screenValueLength = screen.value.length;
+        console.log(`${screenValueLength}: screenValueLength`);
+        if(screenValueLength > 10){
+            let number = parseFloat(screen.value);
+            let rounded = number.toFixed(10);
+            screen.value = rounded;
+        }
     })
-
 };
 calculate();
