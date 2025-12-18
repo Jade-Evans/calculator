@@ -8,20 +8,28 @@ const numberButtons = document.querySelectorAll("#numbersContainer button");
 const numberButtonsArr = Array.from(numberButtons);
 const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
+const operators = "+-X%";
+let screenString = "";
+
 //NUMBERS/OPERATORS APPEAR ON SCREEN WHEN CLICKED//      
 numberButtonsArr.forEach(button=>{
     button.addEventListener("click",()=>{
         screen.value += button.textContent;
-        console.log(button.textContent);
+        screenString += button.textContent;
+        console.log(`${screenString}: screenString`);
     })
 });
-operatorButtonsArr.forEach(button=>{
+operatorButtonsArr.forEach(button=>{ 
     button.addEventListener("click",()=>{
-        screen.value += button.textContent;
-        console.log(button.textContent);
+        let prevButton = screenString [screenString.length -1];
+        if(!operators.includes(prevButton)){
+             screenString += button.textContent;
+             screen.value += button.textContent;
+        }
     })
 });
 //CLEAR BUTTON CLEARS CONTENT ON SCREEN WHEN CLICKED//          
 clearButton.addEventListener("click",()=>{
     screen.value = "";
+    screenString = "";
 });
