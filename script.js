@@ -6,14 +6,22 @@ const operatorButtonsArr = Array.from(operatorButtons);
 const numbersContainer = document.querySelector("#numbersContainer");
 const numberButtons = document.querySelectorAll("#numbersContainer button");
 const numberButtonsArr = Array.from(numberButtons);
-const enterButton = document.querySelector("#enter");
+const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
-       
- numberButtonsArr.forEach((button)=>{
+//NUMBERS/OPERATORS APPEAR ON SCREEN WHEN CLICKED//      
+numberButtonsArr.forEach(button=>{
     button.addEventListener("click",()=>{
         screen.value += button.textContent;
         console.log(button.textContent);
     })
-
- }
-)           
+});
+operatorButtonsArr.forEach(button=>{
+    button.addEventListener("click",()=>{
+        screen.value += button.textContent;
+        console.log(button.textContent);
+    })
+});
+//CLEAR BUTTON CLEARS CONTENT ON SCREEN WHEN CLICKED//          
+clearButton.addEventListener("click",()=>{
+    screen.value = "";
+});
