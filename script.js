@@ -29,6 +29,15 @@ operatorButtonsArr.forEach(button=>{
         }
     })
 });
+
+//BACK BUTTON DELETES PREVIOUS BUTTON ON SCREEN//
+backButton.addEventListener("click", ()=>{
+    let screenStringArr = screenString.split("").slice(0,-1);
+    screenString = screenStringArr.join("");
+    console.log(screenString);
+    screen.value = screen.value.split("").slice(0,-1).join("");
+    
+});
 //CLEAR BUTTON CLEARS CONTENT ON SCREEN WHEN CLICKED//          
 clearButton.addEventListener("click",()=>{
     screen.value = "";
