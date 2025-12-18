@@ -8,6 +8,7 @@ const numberButtons = document.querySelectorAll("#numbersContainer button");
 const numberButtonsArr = Array.from(numberButtons);
 const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
+const backButton = document.querySelector("#back");
 const operators = "+-X%";
 let screenString = "";
 
